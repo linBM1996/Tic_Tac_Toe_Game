@@ -1,0 +1,14 @@
+<h2 *ngIf = "winner">player {{winner}} won!</h2> <!-- structural directive -->
+<p *ngIf = "!winner">current player: {{player}}</p>
+<button (click)="newGame()">New game</button>
+
+<main>
+    <!-- create a square for each item (val) in the squares array -->
+    <!-- binding the value property of the app-square component to the current value (val) in the array -->
+    <!-- binding the click event to make a move on the index when user clicker on square -->
+    <app-square 
+    *ngFor = "let val of squares; let i = index"
+    [value]="val"
+    (click)="MakeMove(i)">
+    </app-square>
+</main>
